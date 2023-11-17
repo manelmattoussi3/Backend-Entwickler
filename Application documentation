@@ -1,0 +1,15 @@
+The code demonstrates the creation of a backend application that handles a FizzBuzz logic implementation using Spring Boot and JPA (Java Persistence API).
+
+FizzBuzzResult Entity
+This entity defines the structure of a FizzBuzzResult object persisted in the database. It includes:
+
+idFizz: An identifier field marked with @Id to represent the unique ID of the FizzBuzz result.
+value: A field that holds the result of the FizzBuzz logic.
+FizzBuzzIService Interface
+This interface declares a method signature generateFizzBuzzList responsible for generating a list of FizzBuzz results based on a given number.
+
+FizzBuzzService Implementation
+The FizzBuzzService class implements the FizzBuzzIService interface. It generates the FizzBuzz results using the generateFizzBuzzList method by iterating from 1 to the provided number. It determines Fizz, Buzz, or FizzBuzz based on the number's divisibility by 3 and 5.
+
+FizzBuzzController REST Controller
+This controller exposes an endpoint at /api/fizzbuzz/{number} that triggers the FizzBuzz generation logic. It injects the FizzBuzzIService and retrieves the generated FizzBuzz list for a given number provided in the URL.
